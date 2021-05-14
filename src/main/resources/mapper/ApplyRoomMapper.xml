@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.activity.server.mapper.ApplyRoomMapper">
+
+    <update id="updateAccount">
+        update apply_room
+        set account = #{applyRoom.account}
+        where roomId = #{id};
+    </update>
+
+    <resultMap id="selectApplyRoom" type="com.activity.server.pojo.ApplyRoom">
+            <result property="roomId" column="room_id"/>
+            <result property="account" column="account"/>
+            <result property="caption" column="caption"/>
+            <result property="startTime" column="start_time"/>
+            <result property="endTime" column="end_time"/>
+    </resultMap>
+
+</mapper>

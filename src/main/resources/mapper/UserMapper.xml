@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.activity.server.mapper.UserMapper">
+
+    <select id="getAccount" resultMap="selectUser" parameterType="String">
+        select
+            account
+        from user
+        where account = #{account};
+    </select>
+
+    <resultMap id="selectUser" type="com.activity.server.pojo.User">
+            <id property="userId" column="user_id"/>
+            <result property="account" column="account"/>
+            <result property="name" column="name"/>
+            <result property="gender" column="gender"/>
+            <result property="community" column="community"/>
+            <result property="permission" column="permission"/>
+    </resultMap>
+
+
+</mapper>

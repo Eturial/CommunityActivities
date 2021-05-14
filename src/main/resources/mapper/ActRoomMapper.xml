@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.activity.server.mapper.ActRoomMapper">
+
+    <select id="getActRoom" resultMap="selectActRoom" parameterType="String">
+        select
+            id, name, status
+        from act_room
+        where name = #{name};
+    </select>
+
+    <select id="getActRoomId" resultMap="selectActRoom" parameterType="String">
+        select
+            id
+        from act_room
+        where name = #{name};
+    </select>
+
+    <resultMap id="selectActRoom" type="com.activity.server.pojo.ActRoom">
+            <id property="roomId" column="room_id"/>
+            <result property="name" column="name"/>
+            <result property="status" column="status"/>
+    </resultMap>
+
+</mapper>
