@@ -4,12 +4,38 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.activity.server.mapper.UserMapper">
 
-    <select id="getAccount" resultMap="selectUser" parameterType="String">
+
+    <select id="getUser" resultMap="selectUser" parameterType="String">
         select
-            account
+            user_id, account, name, gender, community
         from user
         where account = #{account};
     </select>
+
+    <update id="updateAccount" parameterType="user">
+        update user
+        set account = #{user.account}
+        where account = #{user.account};
+    </update>
+
+    <update id="updateName" parameterType="user">
+        update user
+        set name = #{user.name}
+        where account = #{user.account};
+    </update>
+
+    <update id="updateGender" parameterType="user">
+        update user
+        set gender = #{user.gender}
+        where account = #{user.account};
+    </update>
+
+    <update id="updateCommunity" parameterType="user">
+        update user
+        set community = #{user.community}
+        where account = #{user.account};
+    </update>
+
 
     <resultMap id="selectUser" type="com.activity.server.pojo.User">
             <id property="userId" column="user_id"/>

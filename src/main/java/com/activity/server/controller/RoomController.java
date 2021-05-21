@@ -13,13 +13,13 @@ public class RoomController {
     @Autowired
     ActRoomService actRoomService;
 
-    @GetMapping("/getStatus")
-    @ResponseBody
-    // 返回一个获取到的状态信息
-    public RespBean getRoomStatusByName(String name) {
-        // 获取活动室状态
-        ActRoom actRoom = actRoomService.getActRoom(name);
-        String status = actRoom.getStatus();
-        return RespBean.success("当前活动室"+getRoomStatusByName(name));
-    }
+//    @GetMapping("/getStatus")
+//    @ResponseBody
+//    // 返回一个获取到的状态信息
+//    public RespBean getRoomStatusByName(String name) {
+//        // 获取活动室状态
+//        ActRoom actRoom = actRoomService.getActRoom(name);
+//        String status = actRoom.getStatus();
+//        return RespBean.success("当前活动室"+getRoomStatusByName(name));
+//    }
 }

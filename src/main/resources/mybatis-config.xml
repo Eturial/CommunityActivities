@@ -22,5 +22,7 @@
     </environments>
     <mappers>
         <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/ApplyRoomMapper.xml"/>
+        <mapper resource="mapper/ActRoomMapper.xml"/>
     </mappers>
 </configuration>

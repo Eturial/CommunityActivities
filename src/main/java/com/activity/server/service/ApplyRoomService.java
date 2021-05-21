@@ -7,6 +7,6 @@ import com.activity.server.pojo.RespBean;
 *
 */
 public interface ApplyRoomService {
-
     RespBean addApply(String name, ApplyRoom applyRoom);
+//    RespBean addApply(ApplyRoom applyRoom);
 }

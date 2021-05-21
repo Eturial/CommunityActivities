@@ -4,10 +4,27 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.activity.server.mapper.ApplyRoomMapper">
 
-    <update id="updateAccount">
+    <insert id="addOne" parameterType="applyRoom">
+        insert into apply_room(account)
+        values(#{applyRoom.account});
+    </insert>
+
+    <update id="updateCaption" parameterType="applyRoom">
         update apply_room
-        set account = #{applyRoom.account}
-        where roomId = #{id};
+        set caption = #{applyRoom.caption}
+        where account = #{applyRoom.account};
+    </update>
+
+    <update id="updateStartTime">
+        update apply_room
+        set start_time = #{applyRoom.startTime}
+        where account = #{applyRoom.account};
+    </update>
+
+    <update id="updateEndTime">
+        update apply_room
+        set end_time = #{applyRoom.endTime}
+        where account = #{applyRoom.account};
     </update>
 
     <resultMap id="selectApplyRoom" type="com.activity.server.pojo.ApplyRoom">
@@ -17,5 +34,6 @@
             <result property="startTime" column="start_time"/>
             <result property="endTime" column="end_time"/>
     </resultMap>
+
 
 </mapper>

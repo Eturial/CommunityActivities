@@ -4,16 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.activity.server.mapper.ActRoomMapper">
 
-    <select id="getActRoom" resultMap="selectActRoom" parameterType="String">
-        select
-            id, name, status
-        from act_room
-        where name = #{name};
-    </select>
+<!--    <select id="getActRoom" resultMap="selectActRoom" parameterType="String">-->
+<!--        select-->
+<!--            id, name, status-->
+<!--        from act_room-->
+<!--        where name = #{name};-->
+<!--    </select>-->
 
-    <select id="getActRoomId" resultMap="selectActRoom" parameterType="String">
-        select
-            id
+    <select id="getActRoom" resultMap="selectActRoom" parameterType="String">
+        select room_id, name, status
         from act_room
         where name = #{name};
     </select>

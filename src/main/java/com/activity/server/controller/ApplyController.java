@@ -7,28 +7,29 @@ import com.activity.server.service.ApplyRoomService;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping(value = "/apply")
 public class ApplyController {
     @Autowired
     ApplyRoomService applyRoomService;
 
     @PostMapping(value = "/addApply")
-    public RespBean addApply(String name,@RequestBody JSONObject object) {
+    @ResponseBody
+    public RespBean addApply(@RequestBody JSONObject object) {
+//    public RespBean addApply(String name,@RequestBody JSONObject object) {
 
         ApplyRoom applyRoom = new ApplyRoom();
+
+        String name = object.getString("name");
+
         applyRoom.setAccount(object.getString("account"));
         applyRoom.setCaption(object.getString("caption"));
         applyRoom.setStartTime(object.getDate("startTime"));
-        applyRoom.setEndTime(object.getDate("emdTime"));
+        applyRoom.setEndTime(object.getDate("endTime"));
+//        return applyRoomService.addApply(applyRoom);
         return applyRoomService.addApply(name,applyRoom);
     }
-
-
 
 }
