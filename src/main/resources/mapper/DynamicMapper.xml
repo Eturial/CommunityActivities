@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.activity.server.mapper.DynamicMapper">
+
+    <insert id="addOne" parameterType="dynamic">
+        insert into dynamic(account,time)
+        values(#{dynamic.account},#{dynamic.time});
+    </insert>
+
+    <update id="updateContent" parameterType="dynamic">
+        update dynamic
+        set content = #{dynamic.content}
+        where account = #{dynamic.account} and time = #{dynamic.time};
+    </update>
+
+    <update id="updateUrl1" parameterType="dynamic">
+        update dynamic
+        set url1 = #{dynamic.url1}
+        where account = #{dynamic.account} and time = #{dynamic.time};
+    </update>
+
+    <update id="updateUrl2" parameterType="dynamic">
+        update dynamic
+        set url2 = #{dynamic.url2}
+        where account = #{dynamic.account} and time = #{dynamic.time};
+    </update>
+
+    <update id="updateUrl3" parameterType="dynamic">
+        update dynamic
+        set url3 = #{dynamic.url3}
+        where account = #{dynamic.account} and time = #{dynamic.time};
+    </update>
+
+    <update id="updateAvatarUrl">
+        update dynamic
+        set avatar_url = #{dynamic.avatarUrl}
+        where account = #{dynamic.account} and time = #{dynamic.time};
+    </update>
+
+    <update id="updatePic3">
+        update dynamic
+        set pic3 = #{dynamic.pic3}
+        where account = '123456';
+    </update>
+
+    <select id="getAllDynamic" resultMap="selectDynamic">
+        select avatar_url, content, time, url1, url2, url3, thumb
+        from dynamic;
+    </select>
+
+    <select id="getDynamic" resultMap="selectDynamic">
+        select pic3
+        from dynamic
+        where account = '123456';
+    </select>
+
+    <resultMap id="selectDynamic" type="com.activity.server.pojo.Dynamic">
+            <id property="dyId" column="dy_id"/>
+            <result property="account" column="account"/>
+            <result property="avatarUrl" column="avatar_url"/>
+            <result property="content" column="content"/>
+            <result property="time" column="time"/>
+            <result property="url1" column="url1"/>
+            <result property="url2" column="url2"/>
+            <result property="pic3" column="pic3"/>
+<!--            <result property="url3" column="pic3"/>-->
+            <result property="thumb" column="thumb"/>
+    </resultMap>
+
+
+</mapper>

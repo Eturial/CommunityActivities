@@ -7,6 +7,8 @@
         <typeAlias alias="user" type="com.activity.server.pojo.User"/>
         <typeAlias alias="actRoom" type="com.activity.server.pojo.ActRoom"/>
         <typeAlias alias="applyRoom" type="com.activity.server.pojo.ApplyRoom"/>
+        <typeAlias alias="dynamic" type="com.activity.server.pojo.Dynamic"/>
+        <typeAlias alias="comment" type="com.activity.server.pojo.Comment"/>
     </typeAliases>
 
     <environments default="development">
@@ -24,5 +26,7 @@
         <mapper resource="mapper/UserMapper.xml"/>
         <mapper resource="mapper/ApplyRoomMapper.xml"/>
         <mapper resource="mapper/ActRoomMapper.xml"/>
+        <mapper resource="mapper/DynamicMapper.xml"/>
+        <mapper resource="mapper/CommentMapper.xml"/>
     </mappers>
 </configuration>

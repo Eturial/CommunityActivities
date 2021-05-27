@@ -15,8 +15,8 @@ public class ActRoomServiceImpl implements ActRoomService{
     @Autowired
     ActRoomMapper actRoomMapper;
 
-//    @Override
-//    public ActRoom getActRoom(String name) {
-//        return actRoomMapper.getActRoom(name);
-//    }
+    @Override
+    public ActRoom getActRoom(String name) {
+        return actRoomMapper.getActRoom(name);
+    }
 }

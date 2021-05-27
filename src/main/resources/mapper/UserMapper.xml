@@ -13,9 +13,8 @@
     </select>
 
     <update id="updateAccount" parameterType="user">
-        update user
-        set account = #{user.account}
-        where account = #{user.account};
+        insert into user (account)
+        values (#{user.account});
     </update>
 
     <update id="updateName" parameterType="user">
