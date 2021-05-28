@@ -4,6 +4,38 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.activity.server.mapper.CommentMapper">
 
+    <insert id="addOne">
+        insert into comment(account,time)
+        values(#{comment.account},#{comment.time});
+    </insert>
+
+    <update id="updateName">
+        update comment
+        set name = #{comment.name}
+        where account = #{comment.account} and time = #{comment.time};
+    </update>
+    <update id="updateContent">
+        update comment
+        set content = #{comment.content}
+        where account = #{comment.account} and time = #{comment.time};
+    </update>
+    <update id="updateAvatarUrl">
+        update comment
+        set avatar_url = #{comment.avatarUrl}
+        where account = #{comment.account} and time = #{comment.time};
+    </update>
+    <update id="updateDyId">
+        update comment
+        set dy_id = #{comment.dyId}
+        where account = #{comment.account} and time = #{comment.time};
+    </update>
+
+    <select id="getAllComment" resultMap="selectComment">
+        select account, avatar_url, content, time, name
+        from dynamic
+        order by time desc;
+    </select>
+
     <resultMap id="selectComment" type="com.activity.server.pojo.Comment">
             <id property="commentId" column="comment_id"/>
             <result property="dyId" column="dy_id"/>
@@ -12,5 +44,6 @@
             <result property="content" column="content"/>
             <result property="time" column="time"/>
     </resultMap>
+
 
 </mapper>

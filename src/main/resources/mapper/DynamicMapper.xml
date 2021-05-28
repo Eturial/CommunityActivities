@@ -39,22 +39,40 @@
         where account = #{dynamic.account} and time = #{dynamic.time};
     </update>
 
-    <update id="updatePic3">
+<!--    <update id="updatePic3">-->
+<!--        update dynamic-->
+<!--        set pic3 = #{dynamic.pic3}-->
+<!--        where account = '123456';-->
+<!--    </update>-->
+
+    <update id="updateName">
         update dynamic
-        set pic3 = #{dynamic.pic3}
-        where account = '123456';
+        set name = #{dynamic.name}
+        where account = #{dynamic.account} and time = #{dynamic.time};
+    </update>
+
+    <update id="updateThumb">
+        update dynamic
+        set thumb = thumb + 1
+        where account = #{dynamic.account} and time = #{dynamic.time};
     </update>
 
     <select id="getAllDynamic" resultMap="selectDynamic">
-        select avatar_url, content, time, url1, url2, url3, thumb
-        from dynamic;
+        select account, avatar_url, name ,content, time, url1, url2, URL3, thumb
+        from dynamic
+        order by time desc;
+    </select>
+    <select id="selectDynamicId" resultMap="selectDynamic">
+        select dy_id
+        from dynamic
+        where account = #{dynamic.account} and time = #{dynamic.time};
     </select>
 
-    <select id="getDynamic" resultMap="selectDynamic">
-        select pic3
-        from dynamic
-        where account = '123456';
-    </select>
+    <!--    <select id="getDynamic" resultMap="selectDynamic">-->
+<!--        select pic3-->
+<!--        from dynamic-->
+<!--        where account = '123456';-->
+<!--    </select>-->
 
     <resultMap id="selectDynamic" type="com.activity.server.pojo.Dynamic">
             <id property="dyId" column="dy_id"/>
@@ -64,7 +82,7 @@
             <result property="time" column="time"/>
             <result property="url1" column="url1"/>
             <result property="url2" column="url2"/>
-            <result property="pic3" column="pic3"/>
+            <result property="url3" column="url3"/>
 <!--            <result property="url3" column="pic3"/>-->
             <result property="thumb" column="thumb"/>
     </resultMap>

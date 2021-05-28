@@ -4,10 +4,6 @@ import java.sql.Timestamp;
 import java.util.Date;
 import lombok.Data;
 
-/**
- * 
- * @TableName dynamic
- */
 @Data
 public class Dynamic {
     /**
@@ -48,11 +44,14 @@ public class Dynamic {
     /**
      * 图片3 Url
      */
-    private byte[] pic3;
+    private String url3;
+//    private byte[] pic3;
 
     /**
      * 点赞个数
      */
     private Integer thumb;
+
+    private String name;
 
 }

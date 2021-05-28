@@ -1,5 +1,6 @@
 package com.activity.server.service.impl;
 
+import com.activity.server.mapper.UserMapper;
 import com.activity.server.pojo.Dynamic;
 import com.activity.server.pojo.RespBean;
 import com.activity.server.service.DynamicService;
@@ -18,6 +19,9 @@ public class DynamicServiceImpl implements DynamicService {
     @Autowired
     DynamicMapper dynamicMapper;
 
+    @Autowired
+    UserMapper userMapper;
+
     @Override
     public RespBean updateDynamic(Dynamic dynamic) {
 
@@ -25,8 +29,10 @@ public class DynamicServiceImpl implements DynamicService {
             return RespBean.error("null");
         }
         // 创建一条动态，存入活动号与时间
-        System.out.println(dynamic.getTime());
+//        System.out.println(dynamic.getTime());
         dynamicMapper.addOne(dynamic);
+        dynamic.setName(userMapper.getUser(dynamic.getAccount()).getName());
+        dynamicMapper.updateName(dynamic);
 //        System.out.println(dynamic.getTime());
         // 判断动态内容是否为空
         if(dynamic.getContent() != null) {
@@ -53,13 +59,19 @@ public class DynamicServiceImpl implements DynamicService {
     }
 
     @Override
-    public void updatePicture(Dynamic dynamic) {
-        dynamicMapper.updatePic3(dynamic);
+    public RespBean updateThumb(Dynamic dynamic) {
+        dynamicMapper.updateThumb(dynamic);
+        return RespBean.success("点赞成功！");
     }
 
-    // 测试
-    @Override
-    public Dynamic getDynamic() {
-        return dynamicMapper.getDynamic();
-    }
+//    @Override
+//    public void updatePicture(Dynamic dynamic) {
+//        dynamicMapper.updatePic3(dynamic);
+//    }
+//
+//    // 测试
+//    @Override
+//    public Dynamic getDynamic() {
+//        return dynamicMapper.getDynamic();
+//    }
 }

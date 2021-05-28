@@ -15,8 +15,10 @@ public interface DynamicService {
 
     List<Dynamic> getAllDynamic();
 
-    void updatePicture(Dynamic dynamic);
+    RespBean updateThumb(Dynamic dynamic);
+
+//    void updatePicture(Dynamic dynamic);
 
     // 测试
-    Dynamic getDynamic();
+//    Dynamic getDynamic();
 }

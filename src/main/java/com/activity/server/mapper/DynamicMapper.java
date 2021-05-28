@@ -7,9 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
-* @Entity com.activity.server.pojo.Dynamic
-*/
 @Mapper
 @Repository
 public interface DynamicMapper {
@@ -26,9 +23,14 @@ public interface DynamicMapper {
 
     void updateAvatarUrl(@Param("dynamic") Dynamic dynamic);
 
+    void updateName(@Param("dynamic") Dynamic dynamic);
+
     List<Dynamic> getAllDynamic();
 
-    void updatePic3(@Param("dynamic") Dynamic dynamic);
+    Dynamic selectDynamicId(@Param("dynamic") Dynamic dynamic);
 
-    Dynamic getDynamic();
+    void updateThumb(@Param("dynamic") Dynamic dynamic);
+
+//    void updatePic3(@Param("dynamic") Dynamic dynamic);
+
 }

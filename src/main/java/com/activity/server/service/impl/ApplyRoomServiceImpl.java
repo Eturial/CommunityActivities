@@ -28,8 +28,11 @@ public class ApplyRoomServiceImpl implements ApplyRoomService{
     public RespBean addApply(String name, ApplyRoom applyRoom) {
         // 获取当前活动室状态信息
         String status = actRoomMapper.getActRoom(name).getStatus();
-        if(Objects.equals("使用中",status))
-            return RespBean.error("该活动室正在使用，创建失败");
+        if(status != null) {
+            if(Objects.equals("使用中",status))
+                return RespBean.error("该活动室正在使用，创建失败");
+        }
+//        System.out.println(status);
         else {
              // 判断活动号是否有效
             if(userMapper.getUser(applyRoom.getAccount()) != null) {
@@ -55,6 +58,7 @@ public class ApplyRoomServiceImpl implements ApplyRoomService{
                 return RespBean.error("起止时间不能为空!");
             }
         }
+        actRoomMapper.updateStatus(name);
         return RespBean.success("申请成功！");
     }
 }

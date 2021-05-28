@@ -37,9 +37,9 @@ public class DynamicController {
         dynamic.setContent(object.getString("content"));
         dynamic.setAvatarUrl(object.getString("userimg"));
         dynamic.setTime(object.getString("time"));
-        dynamic.setUrl1(object.getString("path"));
+        dynamic.setUrl1(object.getString("url1"));
         dynamic.setUrl2(object.getString("url2"));
-//        dynamic.setUrl3(object.getString("url3"));
+        dynamic.setUrl3(object.getString("url3"));
 
         return dynamicService.updateDynamic(dynamic);
     }
@@ -55,45 +55,49 @@ public class DynamicController {
     @PostMapping(value = "/dynamicThumb")
     @ResponseBody
     public RespBean dynamicThumb(@RequestBody JSONObject object) {
+        Dynamic dynamic = new Dynamic();
 
-        return RespBean.success("200");
+        dynamic.setAccount(object.getString("account"));
+        dynamic.setTime(object.getString("time"));
+
+        return dynamicService.updateThumb(dynamic);
     }
 
     // 测试上传图片
-    @PostMapping(value = "/pic")
-    @ResponseBody
-    public RespBean savePic(@RequestParam("file") MultipartFile file) {
-        if (file.isEmpty()) {
-            return RespBean.error("上传失败！");
-        }
-        try {
-            InputStream inputStream = file.getInputStream();
-            Dynamic dynamic = new Dynamic();
-            byte[] pic = new byte[(int) file.getSize()];
-            inputStream.read(pic);
-            dynamic.setPic3(pic);
-            dynamicService.updatePicture(dynamic);
-            return RespBean.success("上传成功！");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return RespBean.success("上传成功！");
-    }
+//    @PostMapping(value = "/pic")
+//    @ResponseBody
+//    public RespBean savePic(@RequestParam("file") MultipartFile file) {
+//        if (file.isEmpty()) {
+//            return RespBean.error("上传失败！");
+//        }
+//        try {
+//            InputStream inputStream = file.getInputStream();
+//            Dynamic dynamic = new Dynamic();
+//            byte[] pic = new byte[(int) file.getSize()];
+//            inputStream.read(pic);
+//            dynamic.setPic3(pic);
+//            dynamicService.updatePicture(dynamic);
+//            return RespBean.success("上传成功！");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return RespBean.success("上传成功！");
+//    }
 
-    @GetMapping(value="/getPhoto")
-    public void getPhotoById(final HttpServletResponse response) throws IOException {
-        Dynamic dynamic = dynamicService.getDynamic();
-        byte[] data = dynamic.getPic3();
-        response.setContentType("image/jpeg");
-        response.setCharacterEncoding("UTF-8");
-        OutputStream outputSream = response.getOutputStream();
-        InputStream in = new ByteArrayInputStream(data);
-        int len = 0;
-        byte[] buf = new byte[1024];
-        while ((len = in.read(buf, 0, 1024)) != -1) {
-            outputSream.write(buf, 0, len);
-        }
-        outputSream.close();
-    }
+//    @GetMapping(value="/getPhoto")
+//    public void getPhotoById(final HttpServletResponse response) throws IOException {
+//        Dynamic dynamic = dynamicService.getDynamic();
+//        byte[] data = dynamic.getPic3();
+//        response.setContentType("image/jpeg");
+//        response.setCharacterEncoding("UTF-8");
+//        OutputStream outputSream = response.getOutputStream();
+//        InputStream in = new ByteArrayInputStream(data);
+//        int len = 0;
+//        byte[] buf = new byte[1024];
+//        while ((len = in.read(buf, 0, 1024)) != -1) {
+//            outputSream.write(buf, 0, len);
+//        }
+//        outputSream.close();
+//    }
 
 }

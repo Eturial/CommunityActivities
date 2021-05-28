@@ -3,10 +3,7 @@ package com.activity.server.pojo;
 import java.util.Date;
 import lombok.Data;
 
-/**
- * 
- * @TableName comment
- */
+
 @Data
 public class Comment {
     /**
@@ -37,6 +34,8 @@ public class Comment {
     /**
      * 评论时间
      */
-    private Date time;
+    private String time;
+
+    private String name;
 
 }

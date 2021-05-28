@@ -4,12 +4,11 @@ import com.activity.server.pojo.ActRoom;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-/**
-* @Entity com.activity.server.pojo.ActRoom
-*/
+
 @Mapper
 public interface ActRoomMapper {
 
     ActRoom getActRoom(@Param("name") String name);
 
+    void updateStatus(@Param("name") String name);
 }
