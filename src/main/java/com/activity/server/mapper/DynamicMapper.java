@@ -31,6 +31,8 @@ public interface DynamicMapper {
 
     void updateThumb(@Param("dynamic") Dynamic dynamic);
 
+    List<Dynamic> getUserDynamic(@Param("dynamic") Dynamic dynamic);
+
 //    void updatePic3(@Param("dynamic") Dynamic dynamic);
 
 }

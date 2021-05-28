@@ -36,6 +36,16 @@
         order by time desc;
     </select>
 
+    <select id="getUserMessage" parameterType="java.util.List" resultMap="selectComment">
+       select *
+       from comment
+       where dy_id in
+       <foreach collection="list" index="index" item="item" open="("
+            separator="," close=")">
+            #{item}
+       </foreach>
+    </select>
+
     <resultMap id="selectComment" type="com.activity.server.pojo.Comment">
             <id property="commentId" column="comment_id"/>
             <result property="dyId" column="dy_id"/>

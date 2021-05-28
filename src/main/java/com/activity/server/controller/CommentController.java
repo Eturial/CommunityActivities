@@ -4,6 +4,7 @@ import com.activity.server.pojo.Comment;
 import com.activity.server.pojo.Dynamic;
 import com.activity.server.pojo.RespBean;
 import com.activity.server.service.CommentService;
+import com.activity.server.service.DynamicService;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,5 +46,16 @@ public class CommentController {
     // 查看一条动态的全部评论
     public List<Comment> getAllComment() {
         return commentService.getAllComment();
+    }
+
+    // 查看一个用户的相关消息
+    @GetMapping(value = "/getMessage")
+    @ResponseBody
+    public List<Comment> getUserMessage(@RequestBody JSONObject object) {
+
+        Dynamic dynamic = new Dynamic();
+        dynamic.setAccount(object.getString("account"));
+
+        return commentService.getUserMessage(dynamic);
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
 *
@@ -50,5 +51,14 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<Comment> getAllComment() {
         return commentMapper.getAllComment();
+    }
+
+    @Override
+    public List<Comment> getUserMessage(Dynamic dynamic) {
+        List<Dynamic> dynamicList = dynamicMapper.getUserDynamic(dynamic);
+
+        List<Integer> dyIdList = dynamicList.stream().map(Dynamic::getDyId).collect(Collectors.toList());
+
+        return commentMapper.getUserMessage(dyIdList);
     }
 }

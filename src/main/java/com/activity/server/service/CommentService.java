@@ -14,4 +14,6 @@ public interface CommentService {
     RespBean updateComment(Comment comment, Dynamic dynamic);
 
     List<Comment> getAllComment();
+
+    List<Comment> getUserMessage(Dynamic dynamic);
 }

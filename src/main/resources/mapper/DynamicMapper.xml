@@ -67,6 +67,11 @@
         from dynamic
         where account = #{dynamic.account} and time = #{dynamic.time};
     </select>
+    <select id="getUserDynamic" resultMap="selectDynamic">
+        select dy_id
+        from dynamic
+        where account = #{dynamic.account};
+    </select>
 
     <!--    <select id="getDynamic" resultMap="selectDynamic">-->
 <!--        select pic3-->
