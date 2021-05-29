@@ -33,6 +33,7 @@
     <select id="getAllComment" resultMap="selectComment">
         select account, avatar_url, content, time, name
         from dynamic
+        where dy_id = #{dynamic.dyId}
         order by time desc;
     </select>
 
