@@ -13,7 +13,7 @@ public interface CommentService {
 
     RespBean updateComment(Comment comment, Dynamic dynamic);
 
-    List<Comment> getAllComment();
+    List<Comment> getAllComment(Dynamic dynamic);
 
     List<Comment> getUserMessage(Dynamic dynamic);
 }

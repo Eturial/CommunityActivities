@@ -22,7 +22,7 @@ public interface CommentMapper {
 
     void updateDyId(@Param("comment") Comment comment);
 
-    List<Comment> getAllComment();
+    List<Comment> getAllComment(@Param("Dynamic") Dynamic dynamic);
 
     List<Comment> getUserMessage(List<Integer> dyIdList);
 }

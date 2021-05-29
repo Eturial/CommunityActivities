@@ -31,7 +31,7 @@ public class CommentServiceImpl implements CommentService {
     public RespBean updateComment(Comment comment, Dynamic dynamic) {
 
         commentMapper.addOne(comment);
-        comment.setName(userMapper.getUser(dynamic.getAccount()).getName());
+        comment.setName(userMapper.getUser(comment.getAccount()).getName());
         commentMapper.updateName(comment);
         // 判断内容是否为空
         if(comment.getContent() != null) {
@@ -41,16 +41,15 @@ public class CommentServiceImpl implements CommentService {
         }
         commentMapper.updateAvatarUrl(comment);
 
-        int id = dynamicMapper.selectDynamicId(dynamic).getDyId();
-        comment.setDyId(id);
+        comment.setDyId(dynamic.getDyId());
         commentMapper.updateDyId(comment);
 
         return RespBean.success("评论成功！");
     }
 
     @Override
-    public List<Comment> getAllComment() {
-        return commentMapper.getAllComment();
+    public List<Comment> getAllComment(Dynamic dynamic) {
+        return commentMapper.getAllComment(dynamic);
     }
 
     @Override

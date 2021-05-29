@@ -57,8 +57,7 @@ public class DynamicController {
     public RespBean dynamicThumb(@RequestBody JSONObject object) {
         Dynamic dynamic = new Dynamic();
 
-        dynamic.setAccount(object.getString("account"));
-        dynamic.setTime(object.getString("time"));
+        dynamic.setDyId(object.getInteger("dyId"));
 
         return dynamicService.updateThumb(dynamic);
     }

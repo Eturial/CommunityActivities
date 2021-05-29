@@ -47,8 +47,8 @@ public class DynamicServiceImpl implements DynamicService {
             dynamicMapper.updateUrl1(dynamic);
         if(dynamic.getUrl2() != null)
             dynamicMapper.updateUrl2(dynamic);
-//        if(dynamic.getUrl3() != null)
-//            dynamicMapper.updateUrl3(dynamic);
+        if(dynamic.getUrl3() != null)
+            dynamicMapper.updateUrl3(dynamic);
         return RespBean.success("发布成功！");
 
     }
@@ -60,7 +60,13 @@ public class DynamicServiceImpl implements DynamicService {
 
     @Override
     public RespBean updateThumb(Dynamic dynamic) {
+        if(dynamic.getDyId() == null)
+            return RespBean.error("动态为空，点赞失败！");
+
+        int thumb = dynamicMapper.selectById(dynamic.getDyId()).getThumb();
+        dynamic.setThumb(thumb + 1);
         dynamicMapper.updateThumb(dynamic);
+
         return RespBean.success("点赞成功！");
     }
 

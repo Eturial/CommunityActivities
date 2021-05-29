@@ -33,6 +33,8 @@ public interface DynamicMapper {
 
     List<Dynamic> getUserDynamic(@Param("dynamic") Dynamic dynamic);
 
+    Dynamic selectById(@Param("dyId") Integer dyId);
+
 //    void updatePic3(@Param("dynamic") Dynamic dynamic);
 
 }

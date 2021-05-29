@@ -53,12 +53,12 @@
 
     <update id="updateThumb">
         update dynamic
-        set thumb = thumb + 1
-        where account = #{dynamic.account} and time = #{dynamic.time};
+        set thumb = #{dynamic.thumb}
+        where dy_id = #{dynamic.dyId};
     </update>
 
     <select id="getAllDynamic" resultMap="selectDynamic">
-        select account, avatar_url, name ,content, time, url1, url2, URL3, thumb
+        select dy_id, account, avatar_url, name ,content, time, url1, url2, URL3, thumb
         from dynamic
         order by time desc;
     </select>
@@ -71,6 +71,11 @@
         select dy_id
         from dynamic
         where account = #{dynamic.account};
+    </select>
+    <select id="selectById" resultType="com.activity.server.pojo.Dynamic">
+        select *
+        from dynamic
+        where dy_id = #{dyId};
     </select>
 
     <!--    <select id="getDynamic" resultMap="selectDynamic">-->

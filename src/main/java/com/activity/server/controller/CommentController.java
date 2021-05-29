@@ -27,15 +27,14 @@ public class CommentController {
 
         comment.setAccount(object.getString("account"));
         comment.setAvatarUrl(object.getString("avatarUrl"));
-        comment.setName(object.getString("name"));
         comment.setContent(object.getString("content"));
         comment.setTime(object.getString("time"));
 
 
         Dynamic dynamic = new Dynamic();
 
-        dynamic.setAccount(object.getString("dyAccount"));
-        dynamic.setTime(object.getString("dyTime"));
+        dynamic.setDyId(object.getInteger("dyId"));
+
 
 
         return commentService.updateComment(comment, dynamic);
@@ -44,8 +43,10 @@ public class CommentController {
     @GetMapping(value = "/getAllComment")
     @ResponseBody
     // 查看一条动态的全部评论
-    public List<Comment> getAllComment() {
-        return commentService.getAllComment();
+    public List<Comment> getAllComment(@RequestBody JSONObject object) {
+        Dynamic dynamic = new Dynamic();
+        dynamic.setDyId(object.getInteger("dyId"));
+        return commentService.getAllComment(dynamic);
     }
 
     // 查看一个用户的相关消息
