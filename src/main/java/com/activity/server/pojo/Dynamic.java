@@ -54,4 +54,6 @@ public class Dynamic {
 
     private String name;
 
+    private Integer commentNum;
+
 }

@@ -35,6 +35,8 @@ public interface DynamicMapper {
 
     Dynamic selectById(@Param("dyId") Integer dyId);
 
+    void updateCommentNum(@Param("dynamic") Dynamic dynamic);
+
 //    void updatePic3(@Param("dynamic") Dynamic dynamic);
 
 }

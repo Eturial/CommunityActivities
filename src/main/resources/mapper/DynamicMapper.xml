@@ -57,8 +57,14 @@
         where dy_id = #{dynamic.dyId};
     </update>
 
+    <update id="updateCommentNum">
+        update dynamic
+        set commentNum = #{dynamic.commentNum}
+        where dy_id = #{dynamic.dyId};
+    </update>
+
     <select id="getAllDynamic" resultMap="selectDynamic">
-        select dy_id, account, avatar_url, name ,content, time, url1, url2, URL3, thumb
+        select dy_id, account, avatar_url, name ,content, time, url1, url2, URL3, thumb, commentNum
         from dynamic
         order by time desc;
     </select>

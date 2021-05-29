@@ -44,6 +44,10 @@ public class CommentServiceImpl implements CommentService {
         comment.setDyId(dynamic.getDyId());
         commentMapper.updateDyId(comment);
 
+        int commentNum = dynamicMapper.selectById(dynamic.getDyId()).getCommentNum();
+        dynamic.setCommentNum(commentNum + 1);
+        dynamicMapper.updateCommentNum(dynamic);
+
         return RespBean.success("评论成功！");
     }
 
