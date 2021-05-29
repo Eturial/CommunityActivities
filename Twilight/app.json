@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/forum/forum",
+    "pages/admin/admin",
+    "pages/input/input",
+    "pages/reply/reply",
+    "pages/publish/publish",
+    "pages/sport/sport",
+    "pages/message/message",
+    "pages/edit/edit",
+    "pages/advice/advice"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fdc23e",
+    "navigationBarTitleText": "桑榆",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#2c2c2c",
+    "backgroundColor": "#fdc23e",
+    "list": [
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-h.png"
+      },
+      {
+        "pagePath": "pages/forum/forum",
+        "text": "广场",
+        "iconPath": "images/forum.png",
+        "selectedIconPath": "images/forum-h.png"
+      },
+      {
+        "pagePath": "pages/admin/admin",
+        "text": "我的",
+        "iconPath": "images/admin.png",
+        "selectedIconPath": "images/admin-h.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
