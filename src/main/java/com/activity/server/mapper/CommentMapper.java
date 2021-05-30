@@ -25,4 +25,6 @@ public interface CommentMapper {
     List<Comment> getAllComment(@Param("dynamic") Dynamic dynamic);
 
     List<Comment> getUserMessage(List<Integer> dyIdList);
+
+    List<Comment> getTestComment();
 }

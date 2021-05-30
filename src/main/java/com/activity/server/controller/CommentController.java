@@ -45,7 +45,7 @@ public class CommentController {
     // 查看一条动态的全部评论
     public List<Comment> getAllComment(@RequestBody JSONObject object) {
         Dynamic dynamic = new Dynamic();
-        dynamic.setDyId(object.getInteger("dyId"));
+        dynamic.setDyId(object.getIntValue("dyId"));
         return commentService.getAllComment(dynamic);
     }
 
@@ -58,5 +58,12 @@ public class CommentController {
         dynamic.setAccount(object.getString("account"));
 
         return commentService.getUserMessage(dynamic);
+    }
+
+    @GetMapping(value = "/testComment")
+    @ResponseBody
+    // 查看一条动态的全部评论
+    public List<Comment> testComment() {
+        return commentService.getTestComment();
     }
 }

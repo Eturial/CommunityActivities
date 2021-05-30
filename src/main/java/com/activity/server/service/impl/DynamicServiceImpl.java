@@ -65,6 +65,7 @@ public class DynamicServiceImpl implements DynamicService {
 
         int thumb = dynamicMapper.selectById(dynamic.getDyId()).getThumb();
         dynamic.setThumb(thumb + 1);
+        System.out.println(thumb + 1);
         dynamicMapper.updateThumb(dynamic);
 
         return RespBean.success("点赞成功！");

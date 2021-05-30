@@ -61,7 +61,13 @@ public class CommentServiceImpl implements CommentService {
         List<Dynamic> dynamicList = dynamicMapper.getUserDynamic(dynamic);
 
         List<Integer> dyIdList = dynamicList.stream().map(Dynamic::getDyId).collect(Collectors.toList());
-
+//        System.out.println(commentMapper.getUserMessage(dyIdList).get(0).getAvatarUrl());
+//        System.out.println(commentMapper.getUserMessage(dyIdList).get(0).getCommentId());
         return commentMapper.getUserMessage(dyIdList);
+    }
+
+    @Override
+    public List<Comment> getTestComment() {
+        return commentMapper.getTestComment();
     }
 }

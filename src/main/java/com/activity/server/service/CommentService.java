@@ -16,4 +16,6 @@ public interface CommentService {
     List<Comment> getAllComment(Dynamic dynamic);
 
     List<Comment> getUserMessage(Dynamic dynamic);
+
+    List<Comment> getTestComment();
 }

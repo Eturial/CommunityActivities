@@ -31,14 +31,14 @@
     </update>
 
     <select id="getAllComment" resultMap="selectComment">
-        select account, avatar_url, content, time, name
-        from dynamic
+        select comment_id, dy_id, account, avatar_url, content, time, name
+        from comment
         where dy_id = #{dynamic.dyId}
         order by time desc;
     </select>
 
     <select id="getUserMessage" parameterType="java.util.List" resultMap="selectComment">
-       select *
+       select comment_id, dy_id, account, avatar_url, content, time, name
        from comment
        where dy_id in
        <foreach collection="list" index="index" item="item" open="("
@@ -47,11 +47,17 @@
        </foreach>
     </select>
 
+    <select id="getTestComment" resultMap="selectComment">
+        select *
+        from comment
+        order by time desc;
+    </select>
+
     <resultMap id="selectComment" type="com.activity.server.pojo.Comment">
             <id property="commentId" column="comment_id"/>
             <result property="dyId" column="dy_id"/>
             <result property="account" column="account"/>
-            <result property="avatarUrl" column="avatar_HAR"/>
+            <result property="avatarUrl" column="avatar_url"/>
             <result property="content" column="content"/>
             <result property="time" column="time"/>
     </resultMap>
