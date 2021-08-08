@@ -1,0 +1,20 @@
+<view class="sport">
+  <view class="list-1">
+    <view class="title">进行中的</view>
+    <view class="container">
+      <view class="items" wx:for="{{activity}}" wx:key="index">
+      <image src="{{item.imageurl}}"></image>
+      <text>{{item.sportname}}</text>
+    </view>
+    </view>
+  </view>
+  <view class="list-2">
+    <view class="title">参与过的</view>
+    <view class="container">
+      <view class="items" wx:for="{{}}" wx:key="index">
+      <image src="{{}}"></image>
+      <text>{{}}</text>
+    </view>
+    </view>
+  </view>
+</view>

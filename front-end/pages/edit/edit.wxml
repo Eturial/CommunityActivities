@@ -1,0 +1,30 @@
+<view class="edit">
+  <view class="header">资料完善</view>
+  <form action="" bindsubmit="forsubmit">
+    <view class="body">
+      <view class="list">
+        <view class="title">手机号码:</view>
+        <input name="account" type="number" placeholder="请输入11位的数字" maxlength="11" />
+      </view>
+      <view class="list">
+        <view class="title">姓名:</view>
+        <input name="name" />
+      </view>
+      <view class="list">
+        <view class="title">性别:</view>
+        <radio-group  name="gender" class="gender">
+          <radio value="男">男</radio>
+          <radio value="女">女</radio>
+        </radio-group>
+
+      </view>
+      <view class="list">
+        <view class="title">社区名:</view>
+        <input name="community" />
+      </view>
+
+      <button class="sub" form-type="submit" type="primary">提交</button>
+    </view>
+
+  </form>
+</view>

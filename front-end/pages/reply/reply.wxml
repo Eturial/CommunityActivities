@@ -1,0 +1,45 @@
+<view class="reply">
+
+  <view class="tip">
+    <view class="userImf clearfix">
+      <image class="user-left" src="{{dynamic.avatarUrl}}"></image>
+      <view class="user-center">{{dynamic.name}}</view>
+      <view class="user-right">{{dynamic.time}}</view>
+    </view>
+    <view class="content">{{dynamic.content}}</view>
+    <view class="pics" wx:if="{{dynamic.url1 != '' || dynamic.url1 != '' || dynamic.url1 != ''}}">
+      <view class="picture_item" wx:if="{{dynamic.url1 != ''}}">
+        <image src="{{dynamic.url1}}" mode="aspectFill" bindtap="previewImg"></image>
+      </view>
+      <view class="picture_item" wx:if="{{dynamic.url2 != ''}}">
+        <image src="{{dynamic.url2}}" mode="aspectFill" bindtap="previewImg"></image>
+      </view>
+      <view class="picture_item" wx:if="{{dynamic.url3 != ''}}">
+        <image src="{{dynamic.url3}}" mode="aspectFill" bindtap="previewImg"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="centerbar">
+    <text class="thump">点赞 {{dynamic.thumb}}</text>
+    <text class="review">回复 {{dynamic.commentNum}}</text>
+  </view>
+
+  <view class="comment-list">
+    <view class="tip" wx:for="{{commentList}}" wx:key="index">
+      <view class="userImf clearfix">
+        <image class="user-left" src="{{item.avatarUrl}}"></image>
+        <view class="user-center">{{item.name}}</view>
+        <view class="user-right">{{item.time}}</view>
+      </view>
+      <view class="content">{{item.content}}</view>
+    </view>
+  </view>
+
+  <view class="bottombar" style="bottom:{{bottom}}px">
+    <input type="text" name="comment" class="input" placeholder="请说点什么吧···" adjust-position="{{false}}"
+      cursor-spacing="10" bindfocus="inputFocus" bindblur="inputBlur" bindinput='getInputValue' />
+    <view class="submit" bindtap="submit">发送</view>
+  </view>
+
+</view>

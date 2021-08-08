@@ -1,0 +1,60 @@
+page {
+  background-color: #f2f4f6;
+}
+
+.admin {
+  padding: 60rpx 30rpx;
+}
+
+.userinfo {
+  display: flex;
+  height: 400rpx;
+  width: 95%;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  font-size: 44rpx;
+  background-color: #ceefe4;
+  border-radius: 40rpx;
+  box-shadow: 8rpx 8rpx 10rpx #aaa;
+}
+
+.userinfo .blk {
+  padding: 10rpx;
+  background-color: #a1bad0;
+  font-size: 44rpx;
+  border-radius: 8rpx;
+}
+
+.userinfo-avatar {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 60rpx 0rpx 20rpx 0rpx;
+  border-radius: 50%;
+}
+
+.userinfo .act {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #aaa;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80rpx;
+}
+
+.item {
+  margin: 40rpx 0rpx;
+  padding: 0rpx;
+  height: 100rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: #ceefe4;
+  border-radius: 80rpx;
+  box-shadow: 8rpx 8rpx 10rpx #aaa;
+}

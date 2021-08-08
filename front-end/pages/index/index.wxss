@@ -1,0 +1,79 @@
+.clear {
+  clear: both;
+}
+
+page {
+  background-color: #f2f4f6;
+}
+
+.index {
+  padding: 40rpx 30rpx;
+}
+
+.header {
+  height: 520rpx;
+  border-radius: 40rpx;
+  box-shadow: 8rpx 8rpx 10rpx #aaa;
+}
+
+.header image {
+  height: 100%;
+  width: 100%;
+  border-radius: 40rpx;
+}
+
+.title {
+  position: relative;
+  margin: 60rpx 0rpx;
+  height: 140rpx;
+  background-color: white;
+  border-radius: 30rpx;
+  box-shadow: 8rpx 8rpx 10rpx #aaa;
+}
+
+.title image {
+  position: absolute;
+  top: 45rpx;
+  left: 100rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.title view {
+  text-align: center;
+  font-size: 60rpx;
+  line-height: 140rpx;
+  font-weight: 700;
+}
+
+.continer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30rpx 14rpx;
+  height: 460rpx;
+  border-radius: 40rpx;
+  background-color: white;
+  box-shadow: 8rpx 8rpx 10rpx #aaa;
+}
+
+.continer .smallbox {
+  flex: 0 0 25%;
+  margin-bottom: 40rpx;
+}
+
+.continer view {
+  display: block;
+  text-align: center;
+  font-size: 34rpx;
+}
+
+.continer .smallbox image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.footer {
+  height: 200rpx;
+  background-color: skyblue;
+}

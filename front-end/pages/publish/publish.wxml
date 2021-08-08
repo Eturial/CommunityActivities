@@ -1,0 +1,20 @@
+<view class="publish">
+
+  <form bindsubmit="forsubmit">
+    <view class="title">发布动态</view>
+    <textarea class="tarea" name="content" id="" cols="30" rows="10" placeholder="分享你此刻的想法···"></textarea>
+
+    <view class="picture_list">
+      <view wx:for="{{imgs}}" class="picture_item" wx:key="index">
+        <image src="{{item.path}}" mode="aspectFill" bindtap="previewImg" data-index="{{index}}"></image>
+        <text class='del' bindtap='deleteImg' data-index="{{index}}">×</text>
+      </view>
+      <view class="picture_item add-image" wx:if="{{imgs.length >= 3 ? false : true}}" bindtap="bindUpload">
+        <text>+</text>
+      </view>
+    </view>
+
+    <button class="btn" type="primary" form-type="submit" >发布</button>
+  </form>
+
+</view>

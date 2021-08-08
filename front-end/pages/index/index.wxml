@@ -1,0 +1,25 @@
+<view class="index">
+
+  <swiper class="header" indicator-dots="true" indicator-active-color="#dadada" autoplay="true" circular="true">
+    <block wx:for="{{swiper}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.imgurl}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="title">
+    <image src="/images/sport.png"></image>
+    <view>预约活动</view>
+  </view>
+
+  <view class="continer">
+    <block wx:for="{{activity}}" wx:key="index">
+      <view class="smallbox" bindtap="goToInput" data-sportid="{{index}}">
+        <image src="{{item.imageurl}}"></image>
+        <view>{{item.sportname}}</view>
+      </view>
+    </block>
+  </view>
+
+</view>

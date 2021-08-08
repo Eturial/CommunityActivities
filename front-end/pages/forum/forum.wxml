@@ -1,0 +1,31 @@
+<view class="body">
+  <image class="post" bindtap="goToPublish" src="/images/forumtj.png">
+  </image>
+  <view wx:for="{{dynamicList}}" wx:key="index" class="tip" >
+  <view bindtap="goToReply" data-dynamic="{{dynamicList[index]}}">
+    <view class="title">
+      <image src="{{item.avatarUrl}}" class="userimg"></image>
+      <view class="username">{{item.name}}</view>
+    </view>
+    <view class="content">{{item.content}}</view>
+    <view class="pics" wx:if="{{item.url1 != '' || item.url1 != '' || item.url1 != ''}}">
+      <view class="picture_item" wx:if="{{item.url1 != ''}}">
+        <image src="{{item.url1}}" mode="aspectFill" bindtap="previewImg"></image>
+      </view>
+      <view class="picture_item" wx:if="{{item.url2 != ''}}">
+        <image src="{{item.url2}}" mode="aspectFill" bindtap="previewImg"></image>
+      </view>
+      <view class="picture_item" wx:if="{{item.url3 != ''}}">
+        <image src="{{item.url3}}" mode="aspectFill" bindtap="previewImg"></image>
+      </view>
+    </view>
+  </view>
+    <view class="bottom clearfix">
+      <view class="time">{{item.time}}</view>
+      <view class="review">{{item.commentNum}}条评论回复</view>
+      <!-- <image class=" agree" src="{{src}}" bindtap="thumb" data-dyId="{{item.dyId}}"></image> -->
+      <image class=" agree" wx:if="{{flag}}"  src="/images/dz.png" bindtap="thumb" data-dyId="{{item.dyId}}"></image>
+      <image class=" agree" wx:else  src="/images/dzcg.png" ></image>
+    </view>
+  </view>
+</view>

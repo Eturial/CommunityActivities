@@ -1,0 +1,20 @@
+<view class="admin">
+  <view class="hearder">
+    <view wx:if="{{!hasUserInfo}}" class="userinfo" style="color='black'">
+      <image src="" class="userinfo-avatar"></image>
+      <text bindtap="getUserProfile" class="blk">授权登录</text>
+    </view>
+    <view wx:else class="userinfo">
+      <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image>
+      <text>{{userInfo.nickName}}</text>
+      <text class="act">{{account}}</text>
+    </view>
+  </view>
+
+  <view class="body">
+    <button class="item" bindtap="goToSport">我的活动</button>
+    <button class="item" bindtap="goToMessage">我的消息</button>
+    <button class="item" bindtap="goToEdit">资料完善</button>
+    <button class="item" open-type="feedback">建议反馈</button>
+  </view>
+</view>

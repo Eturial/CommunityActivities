@@ -1,0 +1,131 @@
+page {
+  background-color: #f2f4f6;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+
+
+.tip {
+  margin: 30rpx 0rpx;
+  padding: 20rpx 0rpx;
+  background-color: #fff;
+}
+
+.userImf {
+  padding: 20rpx 20rpx 10rpx;
+  height: 70rpx;
+}
+
+.user-left {
+  float: left;
+  margin-right: 20rpx;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 70rpx;
+  background-color: pink;
+}
+
+.user-center {
+  float: left;
+  color: #7e7e7e;
+  line-height: 70rpx;
+}
+
+.user-right {
+  float: right;
+  line-height: 70rpx;
+  color: #7e7e7e;
+  font-size: 28rpx;
+}
+
+.content {
+  margin: 10rpx 0rpx;
+  padding: 30rpx;
+  height: 100%;
+  line-height: 100%;
+  border-top: 1px solid #f2f4f6;
+}
+
+.pics {
+  padding: 0rpx 30rpx 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-top: 1px solid #f2f4f6;
+}
+
+.picture_item {
+  margin: 12px;
+  margin-left: 0;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+
+.picture_item image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+
+.centerbar {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding: 30rpx;
+  font-size: 28rpx;
+  color: #7e7e7e;
+  background-color: #fff;
+}
+
+.thump {
+  margin-right: 80rpx;
+}
+
+.bottombar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  padding: 20rpx 0rpx;
+  width: 100%;
+  height: 80rpx;
+  background-color: rgba(230, 230, 230, 0.8);
+}
+
+.input {
+  margin: 0rpx 20rpx;
+  padding-left: 10rpx;
+  width: 90%;
+  height: 80rpx;
+  align-self: center;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.submit {
+  margin-right: 20rpx;
+  padding: 0rpx 20rpx;
+  width: 10%;
+  height: 80rpx;
+  line-height: 80rpx;
+  align-self: center;
+  border-radius: 10rpx;
+  background-color: #00c760cb;
+}
+
+.comment-list {
+  margin-bottom: 150rpx;
+}

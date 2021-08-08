@@ -1,0 +1,40 @@
+page {
+  background-color: #edeef0;
+  
+}
+.edit {
+  padding: 10rpx 20rpx;
+  margin: 200rpx auto 0rpx;
+  width: 88%;
+  background-color: #f9f8fd;
+  border-radius: 40rpx;
+  box-shadow: 8rpx 8rpx 10rpx #aaa;
+}
+
+.header {
+  margin: 60rpx 0rpx;
+  font-size: 60rpx;
+  font-weight: 700;
+  text-align: center;
+}
+
+.list input {
+  margin: 12rpx 0rpx;
+  height: 70rpx;
+  border: 2px solid #aaa;
+  border-radius: 12rpx;
+}
+
+.title {
+  margin: 20rpx 0rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.gender radio {
+  margin-right: 30rpx;
+}
+
+.sub {
+  margin: 50rpx 0rpx;
+}

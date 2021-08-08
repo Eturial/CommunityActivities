@@ -1,0 +1,9 @@
+<view class="message">
+  <view wx:for="{{message}}" wx:key="index" class="list" bindtap="goToReply" data-dyId="{{message[index].dyId}}">
+    <image src="{{item.avatarUrl}}" class="left"></image>
+    <view class="right">
+      <view class="right-top">{{item.name}}</view>
+      <view class="right-bottom">回复了你的帖子：{{item.content}}</view>
+    </view>
+  </view>
+</view>
